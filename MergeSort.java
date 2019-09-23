@@ -7,7 +7,10 @@ public class MergeSort implements SortingAlgorithm
 		if (a.length > 1)
 		{
 			int[] left = Arrays.copyOfRange(a, 0, a.length / 2);
-			int[] right = Arrays.copyOfRange(a, (a.length / 2) + 1, a.length);
+			int[] right = Arrays.copyOfRange(a, a.length / 2, a.length);
+
+			sort(left);
+			sort(right);
 
 			merge(a, left, right);
 		}
